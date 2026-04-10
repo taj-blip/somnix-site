@@ -60,8 +60,22 @@ function checkout() {
 
 function openModal() {
   document.getElementById("modal").style.display = "flex";
+  
 }
 
 function closeModal() {
   document.getElementById("modal").style.display = "none";
 }
+function revealSections() {
+  const sections = document.querySelectorAll(".section");
+
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      sec.classList.add("visible");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealSections);
+revealSections();
