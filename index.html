@@ -1,57 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Somnix - Sleep Better</title>
+  <title>Somnix | Sleep Better. Perform Better.</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
+<!-- NAV -->
+<header class="nav">
   <div class="logo">SOMNIX</div>
-  <div class="nav-links">
+  <nav>
     <a href="#product">Product</a>
+    <a href="#science">Science</a>
     <a href="#reviews">Reviews</a>
-    <a onclick="openCart()">Cart 🛒 (<span id="cart-count">0</span>)</a>
-  </div>
-</div>
+    <a onclick="openCart()">Cart (<span id="cart-count">0</span>)</a>
+  </nav>
+</header>
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Sleep Better. Perform Better.</h1>
-  <p>Somnix nasal strips improve airflow so you fall asleep faster and recover better.</p>
-  <button onclick="scrollToProduct()">View Product</button>
+  <h1>Sleep Better.<br>Perform Better.</h1>
+  <p>Optimised breathing for deeper sleep, faster recovery, and better focus.</p>
+  <button onclick="scrollToProduct()">Explore Product</button>
 </section>
 
 <!-- PRODUCT -->
-<section id="product" class="product">
-  <h2>Somnix Nasal Strips</h2>
+<section id="product" class="section">
+  <div class="container">
 
-  <img src="product.png" onclick="openModal()" class="product-img">
+    <div class="product-grid">
+      <img src="product.png" class="product-img">
 
-  <p class="price">$14.99</p>
+      <div>
+        <h2>Somnix Nasal Strips</h2>
+        <p class="subtitle">Improve airflow instantly without drugs or stimulants.</p>
 
-  <div class="qty">
-    <button onclick="changeQty(-1)">-</button>
-    <span id="qty">1</span>
-    <button onclick="changeQty(1)">+</button>
+        <p class="price">$14.99</p>
+
+        <div class="qty">
+          <button onclick="changeQty(-1)">-</button>
+          <span id="qty">1</span>
+          <button onclick="changeQty(1)">+</button>
+        </div>
+
+        <button class="primary" onclick="addToCart()">Add to Cart</button>
+      </div>
+
+    </div>
   </div>
+</section>
 
-  <button onclick="addToCart()">Add to Cart</button>
+<!-- SCIENCE -->
+<section id="science" class="section dark">
+  <div class="container">
+    <h2>Why It Works</h2>
+
+    <div class="cards">
+      <div class="card">Opens nasal passages for better airflow</div>
+      <div class="card">Improves oxygen intake during sleep</div>
+      <div class="card">Supports athletic recovery</div>
+    </div>
+  </div>
 </section>
 
 <!-- REVIEWS -->
-<section id="reviews" class="reviews">
-  <h2>What People Say</h2>
+<section id="reviews" class="section">
+  <div class="container">
+    <h2>Real Results</h2>
 
-  <div class="review">⭐⭐⭐⭐⭐ “Actually helped my sleep in days.”</div>
-  <div class="review">⭐⭐⭐⭐⭐ “Used it before basketball games — crazy difference.”</div>
-  <div class="review">⭐⭐⭐⭐⭐ “Simple but works.”</div>
+    <div class="review-grid">
+      <div class="review">“Actually fixed my sleep in a week.”</div>
+      <div class="review">“I use it before basketball games — insane difference.”</div>
+      <div class="review">“Simple, clean, and it works.”</div>
+    </div>
+  </div>
 </section>
 
-<!-- CART POPUP -->
+<!-- CART -->
 <div id="cart" class="cart">
   <h2>Your Cart</h2>
   <div id="cart-items"></div>
@@ -59,11 +87,6 @@
 
   <button onclick="checkout()">Checkout</button>
   <button onclick="closeCart()">Close</button>
-</div>
-
-<!-- IMAGE MODAL -->
-<div id="modal" class="modal" onclick="closeModal()">
-  <img src="product.png">
 </div>
 
 <script src="script.js"></script>
