@@ -1,93 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <title>Somnix | Sleep Better. Perform Better.</title>
+  <title>Somnix</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- NAV -->
-<header class="nav">
-  <div class="logo">SOMNIX</div>
-  <nav>
-    <a href="#product">Product</a>
-    <a href="#science">Science</a>
-    <a href="#reviews">Reviews</a>
-    <a onclick="openCart()">Cart (<span id="cart-count">0</span>)</a>
-  </nav>
-</header>
-
 <!-- HERO -->
 <section class="hero">
-  <h1>Sleep Better.<br>Perform Better.</h1>
-  <p>Optimised breathing for deeper sleep, faster recovery, and better focus.</p>
-  <button onclick="scrollToProduct()">Explore Product</button>
+
+  <!-- VIDEO (optional later) -->
+  <!-- <video autoplay muted loop class="hero-video">
+    <source src="hero.mp4" type="video/mp4">
+  </video> -->
+
+  <div class="hero-content">
+    <h1>Sleep Better.<br>Perform Better.</h1>
+    <p>Somnix improves airflow for deeper sleep, faster recovery, and better performance.</p>
+    <button onclick="scrollToSection('product')">Explore Product</button>
+  </div>
+
 </section>
 
 <!-- PRODUCT -->
 <section id="product" class="section">
+  <div class="container grid">
+
+    <img src="product.png" class="product-img">
+
+    <div>
+      <h2>Somnix Nasal Strips</h2>
+      <p class="sub">Drug-free airflow enhancement for sleep and sport.</p>
+
+      <p class="price">$14.99</p>
+
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section dark">
   <div class="container">
+    <h2>How It Works</h2>
 
-    <div class="product-grid">
-      <img src="product.png" class="product-img">
+    <div class="grid3">
+      <div class="card">Apply before sleep or activity</div>
+      <div class="card">Opens nasal airflow instantly</div>
+      <div class="card">Improves oxygen intake & recovery</div>
+    </div>
+  </div>
+</section>
 
-      <div>
-        <h2>Somnix Nasal Strips</h2>
-        <p class="subtitle">Improve airflow instantly without drugs or stimulants.</p>
+<!-- ATHLETES -->
+<section class="section">
+  <div class="container">
+    <h2>Athlete Testimonials</h2>
 
-        <p class="price">$14.99</p>
-
-        <div class="qty">
-          <button onclick="changeQty(-1)">-</button>
-          <span id="qty">1</span>
-          <button onclick="changeQty(1)">+</button>
-        </div>
-
-        <button class="primary" onclick="addToCart()">Add to Cart</button>
-      </div>
-
+    <div class="grid3">
+      <div class="card">“Used before games — huge difference in breathing.”</div>
+      <div class="card">“Sleep feels deeper and recovery faster.”</div>
+      <div class="card">“Simple but insanely effective.”</div>
     </div>
   </div>
 </section>
 
 <!-- SCIENCE -->
-<section id="science" class="section dark">
+<section class="section dark">
   <div class="container">
-    <h2>Why It Works</h2>
+    <h2>Science Breakdown</h2>
 
-    <div class="cards">
-      <div class="card">Opens nasal passages for better airflow</div>
-      <div class="card">Improves oxygen intake during sleep</div>
-      <div class="card">Supports athletic recovery</div>
+    <div class="grid3">
+      <div class="card">Improves nasal airflow efficiency</div>
+      <div class="card">Supports oxygen delivery during sleep</div>
+      <div class="card">Helps reduce breathing resistance</div>
     </div>
   </div>
 </section>
 
-<!-- REVIEWS -->
-<section id="reviews" class="section">
+<!-- BEFORE / AFTER -->
+<section class="section">
   <div class="container">
-    <h2>Real Results</h2>
+    <h2>Before vs After</h2>
 
-    <div class="review-grid">
-      <div class="review">“Actually fixed my sleep in a week.”</div>
-      <div class="review">“I use it before basketball games — insane difference.”</div>
-      <div class="review">“Simple, clean, and it works.”</div>
+    <div class="grid2">
+      <div class="card">
+        <h3>Before</h3>
+        <p>Poor airflow<br>Light sleep<br>Low recovery</p>
+      </div>
+
+      <div class="card">
+        <h3>After</h3>
+        <p>Improved breathing<br>Deeper sleep<br>Better recovery</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CART -->
-<div id="cart" class="cart">
-  <h2>Your Cart</h2>
-  <div id="cart-items"></div>
-  <p id="total"></p>
+<!-- HOW TO USE -->
+<section class="section dark">
+  <div class="container">
+    <h2>How To Use</h2>
 
-  <button onclick="checkout()">Checkout</button>
-  <button onclick="closeCart()">Close</button>
-</div>
+    <div class="grid3">
+      <div class="card">Clean skin</div>
+      <div class="card">Apply strip across nose</div>
+      <div class="card">Remove after use</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="section">
+  <div class="container">
+    <h2>Why Somnix</h2>
+
+    <div class="grid3">
+      <div class="card">Better than sleep pills (no chemicals)</div>
+      <div class="card">Better than white noise (physical effect)</div>
+      <div class="card">Natural airflow support</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section dark">
+  <div class="container">
+    <h2>FAQ</h2>
+
+    <div class="card">Safe to use? Yes — drug-free external use.</div>
+    <div class="card">When do I use it? Before sleep or training.</div>
+    <div class="card">Does it work instantly? Yes, airflow improves immediately.</div>
+  </div>
+</section>
 
 <script src="script.js"></script>
 </body>
