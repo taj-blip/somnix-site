@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Somnix - Sleep Better</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">SOMNIX</div>
+  <div class="nav-links">
+    <a href="#product">Product</a>
+    <a href="#reviews">Reviews</a>
+    <a onclick="openCart()">Cart 🛒 (<span id="cart-count">0</span>)</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Sleep Better. Perform Better.</h1>
+  <p>Somnix nasal strips improve airflow so you fall asleep faster and recover better.</p>
+  <button onclick="scrollToProduct()">View Product</button>
+</section>
+
+<!-- PRODUCT -->
+<section id="product" class="product">
+  <h2>Somnix Nasal Strips</h2>
+
+  <img src="product.png" onclick="openModal()" class="product-img">
+
+  <p class="price">$14.99</p>
+
+  <div class="qty">
+    <button onclick="changeQty(-1)">-</button>
+    <span id="qty">1</span>
+    <button onclick="changeQty(1)">+</button>
+  </div>
+
+  <button onclick="addToCart()">Add to Cart</button>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="reviews">
+  <h2>What People Say</h2>
+
+  <div class="review">⭐⭐⭐⭐⭐ “Actually helped my sleep in days.”</div>
+  <div class="review">⭐⭐⭐⭐⭐ “Used it before basketball games — crazy difference.”</div>
+  <div class="review">⭐⭐⭐⭐⭐ “Simple but works.”</div>
+</section>
+
+<!-- CART POPUP -->
+<div id="cart" class="cart">
+  <h2>Your Cart</h2>
+  <div id="cart-items"></div>
+  <p id="total"></p>
+
+  <button onclick="checkout()">Checkout</button>
+  <button onclick="closeCart()">Close</button>
+</div>
+
+<!-- IMAGE MODAL -->
+<div id="modal" class="modal" onclick="closeModal()">
+  <img src="product.png">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
