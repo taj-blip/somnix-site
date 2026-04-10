@@ -1,69 +1,95 @@
-body {
+/* =========================
+   SOMNIX - PREMIUM UI V3
+   ========================= */
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
   font-family: Arial, sans-serif;
-  background: #0b1220;
-  color: #e5e7eb;
 }
 
-/* NAV */
+body {
+  background: #070b14;
+  color: #e5e7eb;
+  overflow-x: hidden;
+}
+
+/* ===== NAV ===== */
 .nav {
   position: fixed;
   top: 0;
   width: 100%;
+  padding: 18px 50px;
   display: flex;
   justify-content: space-between;
-  padding: 18px 40px;
-  background: rgba(10, 15, 30, 0.8);
-  backdrop-filter: blur(10px);
-  z-index: 10;
+  background: rgba(10, 15, 30, 0.7);
+  backdrop-filter: blur(12px);
+  z-index: 100;
 }
 
 .logo {
-  font-weight: bold;
   color: #38bdf8;
-  letter-spacing: 2px;
+  font-weight: bold;
+  letter-spacing: 3px;
 }
 
 nav a {
   margin-left: 20px;
   cursor: pointer;
-  color: #e5e7eb;
-  text-decoration: none;
+  color: #cbd5e1;
+  transition: 0.3s;
 }
 
-/* HERO */
+nav a:hover {
+  color: #38bdf8;
+}
+
+/* ===== HERO ===== */
 .hero {
-  padding: 160px 20px 100px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  padding: 0 20px;
+  background: radial-gradient(circle at top, #0f172a, #070b14);
 }
 
 .hero h1 {
-  font-size: 56px;
-  margin-bottom: 10px;
+  font-size: 64px;
+  line-height: 1.1;
+  animation: fadeUp 1s ease-out;
 }
 
 .hero p {
-  color: #9ca3af;
+  margin-top: 15px;
+  color: #94a3b8;
+  max-width: 500px;
 }
 
 button {
-  margin-top: 20px;
-  padding: 12px 24px;
+  margin-top: 25px;
+  padding: 14px 26px;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
-  background: #38bdf8;
+  background: linear-gradient(135deg, #38bdf8, #22c55e);
   color: black;
   font-weight: bold;
-  border-radius: 8px;
+  transition: 0.3s;
 }
 
-/* SECTIONS */
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(56,189,248,0.3);
+}
+
+/* ===== SECTIONS ===== */
 .section {
-  padding: 100px 20px;
-}
-
-.dark {
-  background: #0f172a;
+  padding: 120px 20px;
 }
 
 .container {
@@ -71,29 +97,31 @@ button {
   margin: auto;
 }
 
-/* PRODUCT */
+/* ===== PRODUCT ===== */
 .product-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  gap: 60px;
   align-items: center;
 }
 
 .product-img {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 18px;
+  transition: 0.4s;
+}
+
+.product-img:hover {
+  transform: scale(1.03);
 }
 
 .price {
-  font-size: 24px;
-  margin: 10px 0;
+  font-size: 26px;
+  margin: 15px 0;
+  color: #38bdf8;
 }
 
-.qty button {
-  padding: 6px 12px;
-}
-
-/* CARDS */
+/* ===== CARDS ===== */
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -101,12 +129,18 @@ button {
 }
 
 .card {
-  background: #111827;
-  padding: 20px;
-  border-radius: 12px;
+  background: rgba(255,255,255,0.03);
+  padding: 25px;
+  border-radius: 16px;
+  transition: 0.3s;
 }
 
-/* REVIEWS */
+.card:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.06);
+}
+
+/* ===== REVIEWS ===== */
 .review-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -114,19 +148,47 @@ button {
 }
 
 .review {
-  background: #111827;
+  background: rgba(255,255,255,0.03);
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 16px;
 }
 
-/* CART */
+/* ===== CART ===== */
 .cart {
   position: fixed;
   right: -400px;
   top: 0;
-  width: 300px;
+  width: 320px;
   height: 100%;
-  background: #0f172a;
+  background: #0b1220;
   padding: 20px;
-  transition: 0.3s;
+  transition: 0.4s;
+  border-left: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .cards, .review-grid {
+    grid-template-columns: 1fr;
+  }
 }
